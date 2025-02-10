@@ -47,6 +47,7 @@ def take_user_input():
             audio = r.listen(source, timeout=5)
             print('Recognizing...')
             query = r.recognize_google(audio, language='en-in').lower()
+            print(f"User said: {query}")
         except sr.WaitTimeoutError:
             speak("No input detected. Please try again.")
             return "None"
